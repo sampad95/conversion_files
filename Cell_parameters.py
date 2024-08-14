@@ -22,7 +22,7 @@ alpha = np.arccos(np.dot(a_v, b_v)/(a*b))*180/np.pi
 beta  = np.arccos(np.dot(b_v, c_v)/(b*c))*180/np.pi
 gamma = np.arccos(np.dot(c_v, a_v)/(c*a))*180/np.pi
 
-volume = np.dot(a_v, np.cross(b_v,c_v))
+volume = abs(np.dot(a_v, np.cross(b_v,c_v)))
 
 print("\nCell parameters"+ "\n a = {:.10f}".format(a)+"\n b = {:.10f}".format(b)+"\n c = {:.10f}".format(c))
 print("\n alpha\t= {:.5f}".format(alpha)+"\n beta\t= {:.5f}".format(beta)+"\n gamma\t= {:.5f}".format(gamma))
