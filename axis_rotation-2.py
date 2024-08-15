@@ -1,6 +1,6 @@
 import numpy as np
 
-def axis_rotation(str_file, angle, axis):
+def axis_rotation(str_file):
     with open(str_file, 'r') as data:
         fl = data.readlines()
         
@@ -11,6 +11,8 @@ def axis_rotation(str_file, angle, axis):
         
         Coord_mat = np.array([list(map(float, fl[8:][i].split())) for i in range(len(fl[8:]))]).T
         
+        angle = eval(input("Enter the angle of rotation\n"))
+        axis = input("Enter the axis of rotation in capital: X or Y or Z\n")
 
         theta = np.pi*angle/180
         
@@ -40,11 +42,9 @@ def axis_rotation(str_file, angle, axis):
             output.writelines(fl[5:8])
             for nc in new_Coord:
                 output.write('\t'+"{:.16f}".format(nc[0])+'\t'+"{:.16f}".format(nc[1])+'\t'+"{:.16f}".format(nc[2])+'\n')
+    
     print("POSCAR_rot is written")            
     return rot_mat, new_Coord
 
 structure_file = input("Enter the structure file in POSCAR format\n")
-angle = eval(input("Enter the angle of rotation\n"))
-axis = input("Enter the axis of rotation in capital: X or Y or Z\n")
-
-axis_rotation(structure_file, angle, axis)
+axis_rotation(structure_file)
