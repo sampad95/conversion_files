@@ -47,8 +47,9 @@ def axis_swap(str_file):
             output.writelines(fl[5:8])
             for nc in new_coord:
                 output.write('\t'+"{:.16f}".format(nc[0])+'\t'+"{:.16f}".format(nc[1])+'\t'+"{:.16f}".format(nc[2])+'\n')
-                
-        return new_lattice_vectors, new_coord
+    
+    print("POSCAR_swap is written")            
+    return new_lattice_vectors, new_coord
 
 
 
