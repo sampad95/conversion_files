@@ -40,7 +40,7 @@ def axis_rotation(str_file, angle, axis):
             output.writelines(fl[5:8])
             for nc in new_Coord:
                 output.write('\t'+"{:.16f}".format(nc[0])+'\t'+"{:.16f}".format(nc[1])+'\t'+"{:.16f}".format(nc[2])+'\n')
-    print("POSCAR_rot"+str(axis)+str(angle)+ " is written\n")            
+    print("\nPOSCAR_rot"+str(axis)+str(angle)+ " is written")            
     return rot_mat, new_Coord
 
 structure_file = input("Enter the structure file in POSCAR format\n")
