@@ -48,3 +48,4 @@ def axis_rotation(str_file):
 
 structure_file = input("Enter the structure file in POSCAR format\n")
 axis_rotation(structure_file)
+#print(axis_rotation(structure_file))
