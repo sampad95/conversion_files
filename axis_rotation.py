@@ -48,3 +48,4 @@ angle = eval(input("Enter the angle of rotation\n"))
 axis = input("Enter the axis of rotation in capital: X or Y or Z\n")
 
 axis_rotation(structure_file, angle, axis)
+#print(axis_rotation(structure_file, angle, axis))
