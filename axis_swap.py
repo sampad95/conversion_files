@@ -55,3 +55,4 @@ axis1 = input("Enter axis1 in capital: X or Y or Z\n")
 axis2 = input("Enter axis2 in capital: X or Y or Z\n")
 
 axis_swap(structure_file, axis1, axis2)
+#print(axis_swap(structure_file, axis1, axis2))
