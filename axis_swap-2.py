@@ -56,3 +56,4 @@ def axis_swap(str_file):
 structure_file = input("Enter the structure file in POSCAR format \n")
 
 axis_swap(structure_file)
+#print(axis_swap(structure_file))
