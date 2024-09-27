@@ -1,4 +1,6 @@
 import numpy as np
+import os
+import shutil
 
 def at_disp(str_file):
     with open(str_file, 'r') as data:
@@ -59,6 +61,13 @@ def at_disp(str_file):
                     output.write('\t'+"{:.16f}".format(nc[0])+'\t'+"{:.16f}".format(nc[1])+
                                  '\t'+"{:.16f}".format(nc[2])+'\n')
 
+
+                os.mkdir('ad_'+str(disp))
+                shutil.copy('INCAR', 'ad_'+str(disp))
+                shutil.copy('KPOINTS', 'ad_'+str(disp))
+                shutil.copy('POTCAR', 'ad_'+str(disp))
+                shutil.move('POSCAR_'+str(disp), 'ad_'+str(disp)+"/POSCAR")
+            
 
 structure_file = input("Enter the structure file in POSCAR format with cartesian coordinates\n")               
 at_disp(structure_file)

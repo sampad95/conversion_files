@@ -1,5 +1,13 @@
 #!/bin/bash
-for i in -0.06 -0.05 -0.04 -0.03 -0.02 -0.01 0.00 +0.01 +0.02 +0.03 +0.04 +0.05 +0.06; do
-    mkdir ad_$i;
-    cp INCAR KPOINTS POSCAR POTCAR ad_$i;
+for fl in POSCAR_*
+do
+# fl $fl
+# echo fl
+# echo "${fl%%-*}"
+ echo "${fl##*_}"
+for i in ${fl##*_}; do
+ mkdir ad_$i;
+ mv POSCAR_$i ad_$i/POSCAR;
+ cp INCAR KPOINTS POTCAR ad_$i;
+done
 done
