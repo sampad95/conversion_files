@@ -15,12 +15,21 @@ def axis_swap(str_file):
         if axis1 == "X" and axis2 == "Y":
             ax1 = 0
             ax2 = 1
+        elif axis1 == "Y" and axis2 == "X":
+            ax1 = 1
+            ax2 = 0
         elif axis1 == "Y" and axis2 == "Z":
             ax1 = 1
             ax2 = 2
+        elif axis1 == "Z" and axis2 == "Y":
+            ax1 = 2
+            ax2 = 1
         elif axis1 == "X" and axis2 == "Z":
             ax1 = 0
             ax2 = 2
+        elif axis1 == "Z" and axis2 == "X":
+            ax1 = 2
+            ax2 = 0
         else:
             print("Type error")
         
@@ -56,4 +65,3 @@ def axis_swap(str_file):
 structure_file = input("Enter the structure file in POSCAR format \n")
 
 axis_swap(structure_file)
-#print(axis_swap(structure_file))
